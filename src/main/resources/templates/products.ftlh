@@ -11,7 +11,9 @@
     Поиск по названию объявления: <input type="text" name="title"><br>
     <input type="submit" value="Поиск"/>
 </form>
-<h1>BUYSELL</h1><hr>
+<h1>BUYSELL | <a href="/login">Войти</a></h1>
+<hr>
+<hr>
 <h4>Товары со всей России</h4>
 <#list products as product>
     <div>
@@ -21,16 +23,16 @@
 <hr>
 <h3>Создать новый товар</h3>
 <form action="/product/create" method="post">
-<form action="/product/create" method="post" enctype="multipart/form-data">
-    Название объявления: <input type="text" name="title"/><br><br>
-    Описание объявления: <input type="text" name="description"/><br><br>
-    Цена: <input type="number" name="price"/><br><br>
-    Город: <input type="text" name="city"/><br><br>
-    Имя: <input type="text" name="author"/><br><br>
-    Первая фотография: <input type="file" name="file1"/><br><br>
-    Вторая фотография: <input type="file" name="file2"/><br><br>
-    Третья фотография: <input type="file" name="file3"/><br><br>
-    <input type="submit" value="Добавить товар"/>
-</form>
+    <form action="/product/create" method="post" enctype="multipart/form-data">
+        Название объявления: <input type="text" name="title"/><br><br>
+        Описание объявления: <input type="text" name="description"/><br><br>
+        Цена: <input type="number" name="price"/><br><br>
+        Город: <input type="text" name="city"/><br><br>
+        Имя: <input type="text" name="author"/><br><br>
+        Первая фотография: <input type="file" name="file1"/><br><br>
+        Вторая фотография: <input type="file" name="file2"/><br><br>
+        Третья фотография: <input type="file" name="file3"/><br><br>
+        <input type="submit" value="Добавить товар"/>
+    </form>
 </body>
 </html>

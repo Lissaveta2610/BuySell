@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 
+
 @Controller
 @RequiredArgsConstructor
 public class ProductController {
@@ -21,8 +22,6 @@ public class ProductController {
     @GetMapping("/")
     public String products(@RequestParam(name = "title", required = false) String title, Model model) {
         model.addAttribute("products", productService.listProducts(title));
-    public String products(Model model) {
-        model.addAttribute("products", productService.listProducts());
         return "products";
     }
 
@@ -31,7 +30,6 @@ public class ProductController {
         Product product = productService.getProductById(id);
         model.addAttribute("product", product);
         model.addAttribute("images", product.getImages());
-        model.addAttribute("product", productService.getProductById(id));
         return "product-info";
     }
 
@@ -39,8 +37,6 @@ public class ProductController {
     public String createProduct(@RequestParam("file1") MultipartFile file1, @RequestParam("file2") MultipartFile file2,
                                 @RequestParam("file3") MultipartFile file3, Product product) throws IOException {
         productService.saveProduct(product, file1, file2, file3);
-    public String createProduct(Product product) {
-        productService.saveProduct(product);
         return "redirect:/";
     }
 
