@@ -1,4 +1,4 @@
-package com.example.buysell.model;
+package com.example.buysell.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,9 +28,6 @@ public class Image {
     private boolean isPreviewImage;
     @Lob
     private byte[] bytes;
-
     @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     private Product product;
-
-
 }
